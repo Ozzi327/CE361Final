@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FinalProject
 {
-    public class GamePiece : IComparable
+    public class GamePiece : IComparable<GamePiece>
     {
        public GamePiece(string TypeofPiece = null, string ColorofPiece = null, int PiecePositionX = 0, int PiecePositionY = 0)
         {
@@ -17,10 +17,11 @@ namespace FinalProject
         }
 
         private string PieceType { get; set; } // private because user is not allowed to alter the type of piece
-       private string PieceColor { get; set; } // private becuase user is not allowed to change the piece color
-       private int PositionX { get; set; } // recieves horizontal position on board
-       
-       private int PositionY { get; set; } // recieves vertical position on board
+        private string PieceColor { get; set; } // private becuase user is not allowed to change the piece color
+        private int PositionX { get; } // recieves horizontal position on board
+     
+        private int PositionY { get; } // recieves vertical position on board
+
         public override string ToString()
         {
             return $"The Team {PieceColor} {PieceType} has moved ({PositionX}, {PositionY }) spaces";
@@ -31,7 +32,7 @@ namespace FinalProject
             if(obj is GamePiece && obj != null)
             {
                 GamePiece piece = (GamePiece) obj;
-                return PieceType.Equals(piece.PieceType) && PieceColor.Equals(piece.PieceColor) && horizontalMovement.Equals(piece.horizontalMovement) && verticalMovement.Equals(piece.verticalMovement);
+                return PieceType.Equals(piece.PieceType) && PieceColor.Equals(piece.PieceColor) && PositionX.Equals(piece.PositionX) && PositionY.Equals(piece.PositionY);
             }
             else
             {
@@ -43,38 +44,90 @@ namespace FinalProject
         {
             return base.GetHashCode();
         }
-
+         
         public int CompareTo(GamePiece otherPiece)
         {
             if(PieceColor.CompareTo(otherPiece.PieceColor) == 0)
-            {
-                return PieceType.CompareTo(otherPiece.PieceType);
+            { 
+                if(PieceType.CompareTo(otherPiece.PieceType) == 0)
+                {
+                    if(PositionX.CompareTo(otherPiece.PositionX) == 0)
+                    {
+                        return PositionY.CompareTo(otherPiece.PositionY); // gets difference of Y position of 2 pieces
+                    }
+                    else
+                    {
+                        return PositionX.CompareTo(otherPiece.PositionX); // gets difference of X postion of 2 pieces
+                    }
+                }
+                else
+                {
+                    return PieceType.CompareTo(otherPiece.PieceType); // gets difference of types of 2 pieces
+                }
             }
             else
             {
-                return PieceColor.CompareTo(otherPiece.PieceColor);
+                return PieceColor.CompareTo(otherPiece.PieceColor); // gets difference of color of 2 pieces
             }
         }
 
-        public static int verticalMovement(GamePiece piece)
+        public static int verticalMove(GamePiece piece)
         {
-            return new GamePiece(piece.PositionX + 1);
+            int PositionX = piece.PositionX;
+
+            PositionX = PositionX + 1; // moves position of a chess piece horizontally
+
+            return new GamePiece(piece.PositionX);
         }
 
-        public static int  horizontalMovement(GamePiece piece)
+        public static int  horizontalMove(GamePiece piece)
         {
+            int PositionY = piece.PositionY;
 
+            PositionY = PositionY + 1; // moves position of a chess piece vertically
+
+            return new GamePiece(piece.PositionY);
         }
 
-        public bool validMove()
+        public bool validMove(GamePiece piece, GamePiece otherpiece)
         {
-
+            if( ((piece.PositionX >= 1) && (piece.PositionX <= 8)) && ((piece.PositionY >= 1) && (piece.PositionY <= 8))) // checks if new move is within boundaries of board
+            {
+               if((piece.PositionX == otherpiece.PositionY) && (piece.PositionX == otherpiece.PositionY)) // checks if two pieces are on the same space on the board
+                {
+                    if (piece.PieceColor != otherpiece.PieceColor) // checks if 2 pieces are of different color
+                    {
+                        return true; // valid move
+                    }
+                    else
+                    {
+                        return false; // invalid move
+                    }
+                }
+                else
+                {
+                    return true; // valid move 
+                }
+            }
+            else
+            {
+                return false; // invalid move
+            }
         }
 
-        public string removePiece()
+         public string removePiece(GamePiece piece, GamePiece otherpiece)
         {
-
+            if ((otherpiece.PositionX == piece.PositionX) && (otherpiece.PositionY == piece.PositionX)) // checks if piece B has moved into piece A space on the board
+            {
+                if(otherpiece.PieceColor != piece.PieceColor) // checks if piece A and piece B are the same color
+                {
+                    piece = null; // Piece A is deleted
+                }
+            }
+                 
         }
+
+       
     }
 
     
