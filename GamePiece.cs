@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,11 +15,9 @@ namespace FinalProject
             PositionX = PiecePositionX; // horizontal position of piece on board
             PositionY = PiecePositionY; // vertical position of piece on board
         }
-
         private string PieceType { get; set; } // private because user is not allowed to alter the type of piece
         private string PieceColor { get; set; } // private becuase user is not allowed to change the piece color
         private int PositionX { get; } // recieves horizontal position on board
-     
         private int PositionY { get; } // recieves vertical position on board
 
         public override string ToString()
@@ -89,13 +87,13 @@ namespace FinalProject
             return new GamePiece(piece.PositionY);
         }
 
-        public bool validMove(GamePiece piece, GamePiece otherpiece)
+        public bool validMove(GamePiece a, GamePiece b)
         {
-            if( ((piece.PositionX >= 1) && (piece.PositionX <= 8)) && ((piece.PositionY >= 1) && (piece.PositionY <= 8))) // checks if new move is within boundaries of board
+            if( ((a.PositionX >= 1) && (a.PositionX <= 8)) && ((a.PositionY >= 1) && (a.PositionY <= 8))) // checks if new move is within boundaries of board
             {
-               if((piece.PositionX == otherpiece.PositionY) && (piece.PositionX == otherpiece.PositionY)) // checks if two pieces are on the same space on the board
+               if((a.PositionX == b.PositionY) && (a.PositionX == b.PositionY)) // checks if two pieces are on the same space on the board
                 {
-                    if (piece.PieceColor != otherpiece.PieceColor) // checks if 2 pieces are of different color
+                    if (a.PieceColor != b.PieceColor) // checks if 2 pieces are of different color
                     {
                         return true; // valid move
                     }
@@ -115,13 +113,16 @@ namespace FinalProject
             }
         }
 
-         public string removePiece(GamePiece piece, GamePiece otherpiece)
+         public void removePiece(GamePiece a, GamePiece b)
         {
-            if ((otherpiece.PositionX == piece.PositionX) && (otherpiece.PositionY == piece.PositionX)) // checks if piece B has moved into piece A space on the board
+            if ((b.PositionX == a.PositionX) && (b.PositionY == a.PositionX)) // checks if piece B has moved into piece A space on the board
             {
-                if(otherpiece.PieceColor != piece.PieceColor) // checks if piece A and piece B are the same color
+                if(b.PieceColor != a.PieceColor) // checks if piece A and piece B are the same color
                 {
-                    piece = null; // Piece A is deleted
+                    a.PieceColor = null; // Piece A color is deleted
+                    a.PieceType = null; // Piece A type is deleted
+
+                    
                 }
             }
                  
