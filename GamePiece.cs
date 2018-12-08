@@ -69,7 +69,7 @@ namespace FinalProject
             }
         }
 
-        public static int verticalMove(GamePiece piece)
+        public static int horizontalMove(GamePiece piece)
         {
             int PositionX = piece.PositionX;
 
@@ -78,7 +78,7 @@ namespace FinalProject
             return new GamePiece(piece.PositionX);
         }
 
-        public static int  horizontalMove(GamePiece piece)
+        public static int  verticalMove(GamePiece piece)
         {
             int PositionY = piece.PositionY;
 
