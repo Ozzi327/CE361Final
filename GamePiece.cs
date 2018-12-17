@@ -20,6 +20,7 @@ namespace FinalProject
         private int PositionX { get; } // recieves horizontal position on board
         private int PositionY { get; } // recieves vertical position on board
 
+
         public override string ToString()
         {
             return $"The Team {PieceColor} {PieceType} has moved ({PositionX}, {PositionY }) spaces";
@@ -69,22 +70,26 @@ namespace FinalProject
             }
         }
 
-        public static int horizontalMove(GamePiece piece)
-        {
-            int PositionX = piece.PositionX;
-
-            PositionX = PositionX + 1; // moves position of a chess piece horizontally
-
-            return new GamePiece(piece.PositionX);
-        }
-
-        public static int  verticalMove(GamePiece piece)
+         public static void UpMove(GamePiece piece)
         {
             int PositionY = piece.PositionY;
+            PositionY = PositionY + 1; // moves position of a chess piece upwards vertically
+        }
+         public static void DownMove(GamePiece piece)
+        {
+            int PositionY = piece.PositionY;
+            PositionY = PositionY - 1; // moves position of a chess piece downwards vertically 
+        }
 
-            PositionY = PositionY + 1; // moves position of a chess piece vertically
-
-            return new GamePiece(piece.PositionY);
+        public static void RightMove(GamePiece piece)
+        {
+            int PositionX = piece.PositionX;
+            PositionX = PositionX + 1; // moves position of a chess piece rightwards horizontally
+        }
+        public static void LeftMove(GamePiece piece)
+        {
+            int PositionX = piece.PositionX;
+            PositionX = PositionX - 1; // moves position of a chess piece leftwards horizontally
         }
 
         public bool validMove(GamePiece a, GamePiece b)
