@@ -23,7 +23,7 @@ namespace FinalProject
 
         public override string ToString()
         {
-            return $"The Team {PieceColor} has moved ({PositionX}, {PositionY }) spaces";
+            return $"The Team {PieceColor} King has moved ({PositionX}, {PositionY }) spaces";
         }
 
         public override bool Equals(object obj) // checks if object is a King type
