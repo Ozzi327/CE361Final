@@ -70,23 +70,23 @@ namespace FinalProject
             }
         }
 
-         public static void UpMove(GamePiece piece)
+         public void UpMove(GamePiece piece)
         {
             int PositionY = piece.PositionY;
             PositionY = PositionY + 1; // moves position of a chess piece upwards vertically
         }
-         public static void DownMove(GamePiece piece)
+         public void DownMove(GamePiece piece)
         {
             int PositionY = piece.PositionY;
             PositionY = PositionY - 1; // moves position of a chess piece downwards vertically 
         }
 
-        public static void RightMove(GamePiece piece)
+        public void RightMove(GamePiece piece)
         {
             int PositionX = piece.PositionX;
             PositionX = PositionX + 1; // moves position of a chess piece rightwards horizontally
         }
-        public static void LeftMove(GamePiece piece)
+        public void LeftMove(GamePiece piece)
         {
             int PositionX = piece.PositionX;
             PositionX = PositionX - 1; // moves position of a chess piece leftwards horizontally
