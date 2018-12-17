@@ -101,84 +101,26 @@ namespace FinalProject
 
         }
 
-        public static int horizontalMove(King piece)
-        {
-            int PositionX = piece.PositionX;
-
-            PositionX = PositionX + 1; // moves position of a King piece horizontally to the right
-
-            return new King(piece.PositionX);
-        }
-
-        public static int horizontalMoveLeft(King piece)
-        {
-            int PositionX = piece.PositionX;
-
-            PositionX = PositionX - 1; // moves position of a King piece horizontally to the left
-
-            return new King(piece.PositionX);
-        }
-
-        public static int verticalMove(King piece)
+        public static void UpMove(King piece)
         {
             int PositionY = piece.PositionY;
-
-            PositionY = PositionY + 1; // moves position of King piece vertically upward
-
-            return new King(piece.PositionY);
+            PositionY = PositionY + 1; // moves position of a chess piece upwards vertically
         }
-
-        public static int verticalMoveDown(King piece)
+        public static void DownMove(King piece)
         {
             int PositionY = piece.PositionY;
-
-            PositionY = PositionY - 1; // moves position of King piece vertically downward
-
-            return new King(piece.PositionY);
+            PositionY = PositionY - 1; // moves position of a chess piece downwards vertically 
         }
 
-        public static int UpDiagonalLeftMove(King piece)
+        public static void RightMove(King piece)
         {
             int PositionX = piece.PositionX;
-            int PositionY = piece.PositionY;
-
-            PositionY = PositionY + 1; // moves position of a chess piece vertically upwards
-            PositionX = PositionX - 1; // moves position of King piece horizontally leftward
-
-            return new King(piece.PositionX, piece.PositionY);
+            PositionX = PositionX + 1; // moves position of a chess piece rightwards horizontally
         }
-
-        public static int DownDiagonalLeftMove(King piece)
+        public static void LeftMove(King piece)
         {
             int PositionX = piece.PositionX;
-            int PositionY = piece.PositionY;
-
-            PositionY = PositionY - 1; // moves position of a chess piece vertically downward
-            PositionX = PositionX - 1; // moves position of King piece horizontally leftward
-
-            return new King(piece.PositionX, piece.PositionY);
-        }
-
-        public static int UpDiagonalRightMove(King piece)
-        {
-            int PositionX = piece.PositionX;
-            int PositionY = piece.PositionY;
-
-            PositionY = PositionY + 1; // moves position of a chess piece vertically upwards
-            PositionX = PositionX + 1; // moves position of King piece horizontally rightward
-
-            return new King(piece.PositionX, piece.PositionY);
-        }
-
-        public static int DownDiagonalRightMove(King piece)
-        {
-            int PositionX = piece.PositionX;
-            int PositionY = piece.PositionY;
-
-            PositionY = PositionY - 1; // moves position of a chess piece vertically upwards
-            PositionX = PositionX + 1; // moves position of King piece horizontally rightward
-
-            return new King(piece.PositionX, piece.PositionY);
+            PositionX = PositionX - 1; // moves position of a chess piece leftwards horizontally
         }
     }  
 }
