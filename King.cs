@@ -122,5 +122,41 @@ namespace FinalProject
             int PositionX = piece.PositionX;
             PositionX = PositionX - 1; // moves position of a chess piece leftwards horizontally
         }
+
+        public void UpLeftDiagonalMove(King piece)
+        {
+            int PositionX = piece.PositionY;
+            int PositionY = piece.PositionX;
+
+            PositionX = piece.PositionX - 1;
+            PositionY = piece.PositionY + 1;
+        }
+
+        public void DownRightDiagonalMove(King piece)
+        {
+            int PositionX = piece.PositionY;
+            int PositionY = piece.PositionX;
+
+            PositionX = piece.PositionX + 1;
+            PositionY = piece.PositionY - 1;
+        }
+
+        public void UpRightDiagonalMove(King piece)
+        {
+            int PositionX = piece.PositionY;
+            int PositionY = piece.PositionX;
+
+            PositionX = piece.PositionX + 1;
+            PositionY = piece.PositionY + 1;
+        }
+
+        public void DownLeftDiagonalMove(King piece)
+        {
+            int PositionX = piece.PositionY;
+            int PositionY = piece.PositionX;
+
+            PositionX = piece.PositionX - 1;
+            PositionY = piece.PositionY - 1;
+        }
     }  
 }
