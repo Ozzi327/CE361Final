@@ -9,17 +9,17 @@ namespace FinalProject
 {
     public class King : GamePiece, IComparable<King>
     {
-        public King(string ColorofPiece = null, int KingPositionX = 0, int KingPositionY = 0)
+        public King(string PieceType, bool ColorofPiece = false, Thickness KingPositionX = 0, Thickness KingPositionY = 0) : base(PieceType, false, KingPositionX, KingPositionY)
         {
             PieceColor = ColorofPiece; // determines color of chess piece i.e. Black or White
             PositionX = KingPositionX; // horizontal position of piece on board
             PositionY = KingPositionY; // vertical position of piece on board
+            PieceType = "King";
 
         }
 
-        private string PieceColor { get; set; } // private becuase user is not allowed to change the piece color
-        private int PositionX { get; } // recieves horizontal position on board
-        private int PositionY { get; } // recieves vertical position on board
+        private Thickness PositionX; // recieves horizontal position on board
+        private Thickness PositionY; // recieves vertical position on board
 
         public override string ToString()
         {
@@ -48,14 +48,14 @@ namespace FinalProject
         {
             if (PieceColor.CompareTo(otherPiece.PieceColor) == 0)
             {
-               if (PositionX.CompareTo(otherPiece.PositionX) == 0)
-               {
-                 return PositionY.CompareTo(otherPiece.PositionY); // gets difference of Y position of 2 pieces
-               }
-               else
-               {
-                 return PositionX.CompareTo(otherPiece.PositionX); // gets difference of X postion of 2 pieces
-               }   
+                if (PositionX.Left.CompareTo(otherPiece.PositionX.Left) == 0)
+                {
+                    return PositionY.Top.CompareTo(otherPiece.PositionY.Top); // gets difference of Y position of 2 pieces
+                }
+                else
+                {
+                    return PositionX.Left.CompareTo(otherPiece.PositionX.Left); // gets difference of X postion of 2 pieces
+                }
             }
             else
             {
@@ -63,13 +63,13 @@ namespace FinalProject
             }
         }
 
-        public bool validMove(King a, King b)
+        public bool validMove(GamePiece a)
         {
-            if (((a.PositionX >= 1) && (a.PositionX <= 8)) && ((a.PositionY >= 1) && (a.PositionY <= 8))) // checks if new move is within boundaries of board
+            if (((this.PositionX.Left >= 200) && (this.PositionX.Left <= 690)) && ((this.PositionY.Top >= 70) && (this.PositionY.Top <= 560))) // checks if new move is within boundaries of board
             {
-                if ((a.PositionX == b.PositionY) && (a.PositionX == b.PositionY)) // checks if two pieces are on the same space on the board
+                if ((this.PositionX == a.PositionY) && (this.PositionX == a.PositionY)) // checks if two pieces are on the same space on the board
                 {
-                    if (a.PieceColor != b.PieceColor) // checks if 2 pieces are of different color
+                    if (this.PieceColor != a.PieceColor) // checks if 2 pieces are of different color
                     {
                         return true; // valid move
                     }
@@ -91,7 +91,7 @@ namespace FinalProject
 
         public void removePiece(King a, King b)
         {
-            if ((b.PositionX == a.PositionX) && (b.PositionY == a.PositionX)) // checks if piece B has moved into piece A space on the board
+            if ((b.PositionX.Left == a.PositionX.Left) && (b.PositionY.Top == a.PositionY.Top)) // checks if piece B has moved into piece A space on the board
             {
                 if (b.PieceColor != a.PieceColor) // checks if piece A and piece B are the same color
                 {
@@ -101,62 +101,59 @@ namespace FinalProject
 
         }
 
-        public void UpMove(King piece)
+        public void Move(double inputX, double inputY, Thickness X, Thickness Y, Image BS)
         {
-            int PositionY = piece.PositionY;
-            PositionY = PositionY + 1; // moves position of a chess piece upwards vertically
+            if ((inputX == 0) && (inputY == 1))
+            {
+                Y.Top = Y.Top + 70; // moves one space to up vertically 
+                BS.Margin = Y;
+            }
+            if ((inputX == 0) && (inputY == -1))
+            {
+                Y.Top = Y.Top - 70; // moves one space down vertically
+                BS.Margin = Y;
+            }
+            if ((inputX == 1) && (inputY == 0))
+            {
+                X.Left = X.Left + 70; // moves one space to the right horizontally
+                BS.Margin = X;
+            }
+            if ((inputX == -1) && (inputY == -1))
+            {
+                X.Left = X.Left - 70; // moves one space to the left horizontally
+                X.Top = X.Top - 70; // moves one space down vertically
+                BS.Margin = X; // Left Down Diagonal Move
+
+            }
+            if ((inputX == -1) && (inputY == 1))
+            {
+                X.Left = X.Left - 70; // moves one space to the left horizontally
+                X.Top = X.Top + 70; // moves one space up vertically
+                BS.Margin = X; // Left Up Diagonal Move
+            }
+            if ((inputX == 1) && (inputY == -1))
+            {
+                Y.Left = Y.Left + 70; // moves one space to the left horizontally
+                Y.Top = Y.Top - 70; // moves one space down vertically
+                BS.Margin = Y; // Right Down Diagonal Move
+            }
+            if ((inputX == 1) && (inputY == 1))
+            {
+                Y.Left = Y.Left + 70; // moves one space to the left horizontally
+                Y.Top = Y.Top + 70; // moves one space up vertically
+                BS.Margin = X; // Right Up Diagonal Move
+            }
+            else if ((inputX == 0) && (inputY == 0))
+            {
+                X.Left = X.Left; // no horizontal movement
+                X.Top = X.Top;  // no vertical movement
+                BS.Margin = X; // same original movement
+            }
         }
-        public void DownMove(King piece)
-        {
-            int PositionY = piece.PositionY;
-            PositionY = PositionY - 1; // moves position of a chess piece downwards vertically 
-        }
-
-        public void RightMove(King piece)
-        {
-            int PositionX = piece.PositionX;
-            PositionX = PositionX + 1; // moves position of a chess piece rightwards horizontally
-        }
-        public void LeftMove(King piece)
-        {
-            int PositionX = piece.PositionX;
-            PositionX = PositionX - 1; // moves position of a chess piece leftwards horizontally
-        }
-
-        public void UpLeftDiagonalMove(King piece)
-        {
-            int PositionX = piece.PositionY;
-            int PositionY = piece.PositionX;
-
-            PositionX = piece.PositionX - 1;
-            PositionY = piece.PositionY + 1;
-        }
-
-        public void DownRightDiagonalMove(King piece)
-        {
-            int PositionX = piece.PositionY;
-            int PositionY = piece.PositionX;
-
-            PositionX = piece.PositionX + 1;
-            PositionY = piece.PositionY - 1;
-        }
-
-        public void UpRightDiagonalMove(King piece)
-        {
-            int PositionX = piece.PositionY;
-            int PositionY = piece.PositionX;
-
-            PositionX = piece.PositionX + 1;
-            PositionY = piece.PositionY + 1;
-        }
-
-        public void DownLeftDiagonalMove(King piece)
-        {
-            int PositionX = piece.PositionY;
-            int PositionY = piece.PositionX;
-
-            PositionX = piece.PositionX - 1;
-            PositionY = piece.PositionY - 1;
-        }
-    }  
+    }
 }
+
+   
+
+
+
