@@ -170,7 +170,7 @@ public class Knight : GamePiece, IComparable<Knight>
     }
     public void removePiece(Knight a, Knight b)
     {
-        if ((b.PositionX.Left == a.PositionX.Left) && (b.PositionY.Top == a.PositionX.Left)) // checks if piece B has moved into piece A space on the board
+        if ((b.PositionX.Left == a.PositionX.Left) && (b.PositionY.Top == a.PositionY.Top)) // checks if piece B has moved into piece A space on the board
         {
             if (b.PieceColor != a.PieceColor) // checks if piece A and piece B are the same color
             {
