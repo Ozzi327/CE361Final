@@ -1,22 +1,37 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Foundation;
+using Windows.Foundation.Collections;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Navigation;
+using ChessFinal;
+using Windows.UI.Xaml.Media.Imaging;
 
 public class Knight : GamePiece, IComparable<Knight>
 {
-    public Knight(string PieceType, Thickness KnightPositionX = 0, Thickness KnightPositionY = 0, bool ColorofPiece = false) : base(PieceType, KnightPositionX, KnightPositionY, false)
+    public Knight(string PieceType, Thickness KnightPositionX, Thickness KnightPositionY, bool ColorofPiece = false) : base(PieceType, KnightPositionX, KnightPositionY, false)
     {
         PieceType = "Knight";
         PieceColor = ColorofPiece;
-        PositionX = BishopPositionX;
-        PositionY = BishopPositionY;
+        PositionX = KnightPositionX;
+        PositionY = KnightPositionY;
     }
 
 
     private Thickness tempPositionX;
     private Thickness tempPositionY;
 
-    public override string Tostring()
+    public override string ToString()
     {
-        return $"The Team {Piececolor} Knight has moved ({PositionX}, {PositionY}) spaces";
+        return $"The Team Knight has moved ({PositionX}, {PositionY}) spaces";
     }
 
     public override bool Equals(object obj) // checks if object is a King type
@@ -63,28 +78,28 @@ public class Knight : GamePiece, IComparable<Knight>
         {
             x = Kn.Margin;
             x.Left = x.Left + 2 * 70;
-            y = Kn.Margin;
-            y.Top = y.Top + 1 * 70;
+
+            x.Top = x.Top + 1 * 70;
             Kn.Margin = x;
-            Kn.Margin = y;
+
         }
         else if ((inputX == 2) && (inputY == 0))
         {
             x = Kn.Margin;
             x.Left = x.Left + 2 * 70;
-            y = Kn.Margin;
-            y.Top = y.Top - 1 * 70;
+
+            x.Top = x.Top - 1 * 70;
             Kn.Margin = x;
-            Kn.Margin = y;
+
         }
         else if ((inputX == 3) && (inputY == 0))
         {
             x = Kn.Margin;
             x.Left = x.Left - 2 * 70;
-            y = Kn.Margin;
-            y.Top = y.Top + 1 * 70;
+
+            x.Top = x.Top + 1 * 70;
             Kn.Margin = x;
-            Kn.Margin = y;
+
         }
         else if ((inputX == 4) && (inputY == 0))
         {
@@ -108,36 +123,37 @@ public class Knight : GamePiece, IComparable<Knight>
         {
             x = Kn.Margin;
             x.Left = x.Left + 1 * 70;
-            y = Kn.Margin;
-            y.Top = y.Top - 2 * 70;
+
+            x.Top = x.Top - 2 * 70;
             Kn.Margin = x;
-            Kn.Margin = y;
+
         }
         else if ((inputX == 7) && (inputY == 0))
         {
             x = Kn.Margin;
             x.Left = x.Left - 1 * 70;
-            y = Kn.Margin;
-            y.Top = y.Top + 2 * 70;
+
+            x.Top = x.Top + 2 * 70;
             Kn.Margin = x;
-            Kn.Margin = y;
+
         }
         else if ((inputX == 8) && (inputY == 0))
         {
             x = Kn.Margin;
             x.Left = x.Left - 1 * 70;
-            y = Kn.Margin;
-            y.Top = y.Top - 2 * 70;
+
+            x.Top = x.Top - 2 * 70;
             Kn.Margin = x;
-            Kn.Margin = y;
+
         }
         else
-            Console.WriteLine("invalid move, make x a value from 1-8 for its moves, leave y blank, else cant be moved there");
+            Kn.Margin = x;
+
 
 
     }
 
-    public bool validMove(Gamepiece b)
+    public bool validMove(GamePiece b)
     {
         if (((this.PositionX.Left >= 1) && (this.PositionX.Left <= 8)) && ((this.PositionY.Top >= 1) && (this.PositionY.Top <= 8))) // checks if new move is within boundaries of board
         {
@@ -163,18 +179,14 @@ public class Knight : GamePiece, IComparable<Knight>
         }
     }
 
-    public static void Moveset()
-    {
-        this.PostionX = this.tempPositionX;
-        this.PositionY = this.tempPositionY;
-    }
+
     public void removePiece(Knight a, Knight b)
     {
         if ((b.PositionX.Left == a.PositionX.Left) && (b.PositionY.Top == a.PositionY.Top)) // checks if piece B has moved into piece A space on the board
         {
             if (b.PieceColor != a.PieceColor) // checks if piece A and piece B are the same color
             {
-                a.PieceColor = null; // Piece A color is deleted
+                a.PieceColor = false; // Piece A color is deleted
             }
         }
 
