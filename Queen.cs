@@ -18,7 +18,7 @@ namespace ChessFinal
 {
     public class Queen : GamePiece, IComparable<Queen>
     {
-        public Queen(string PieceType, Thickness QueenPositionX, Thickness QueenPositionY, bool ColorofPiece = false) : base(PieceType, QueenPositionX, QueenPositionY, false)
+        public Queen(string PieceType, Thickness QueenPositionX , Thickness QueenPositionY , bool ColorofPiece = false) : base(PieceType, QueenPositionX, QueenPositionY, false)
         {
             PieceType = "Queen";
             PieceColor = ColorofPiece; // determines color of chess piece i.e. Black or White
@@ -107,62 +107,33 @@ namespace ChessFinal
             }
 
         }
-        public void Move(double inputX, double inputY, Thickness X, Thickness Y, Image BS)
+        public void Move(double inputX, double inputY, Thickness x, Thickness y, Image gh)
         {
-            if (inputX == inputY)
+            if ((inputX == inputY) || (inputX == (inputY * -1)))// checks to make sure the move is diagnal of the piece otherwise wont move
             {
-                if ((inputX == 0) && (inputY >= 1)) 
-                {
-                    Y.Top = Y.Top + (inputY * 70); // moves inputY spaces up vertically 
-                    BS.Margin = Y;
-                }
-                if ((inputX == 0) && (inputY <= -1)) 
-                {
-                    Y.Top = Y.Top - (inputY * 70); // moves inputY spaces down vertically
-                    BS.Margin = Y;
-                }
-                if ((inputX >= 1) && (inputY == 0))  
-                {
-                    X.Left = X.Left + (inputX * 70); // moves inputX spaces to the right horizontally
-                    BS.Margin = X;
-                }
-                if ((inputX <= -1) && (inputY == 0)) 
-                {
-                    X.Left = X.Left + (inputX * 70); // moves inputX spaces to the left horizontally
-                    BS.Margin = X;
-                }
-                if ((inputX <= -1) && (inputY <= -1)) 
-                {
-                    X.Left = X.Left - (inputX * 70); // moves inputX spaces to the left horizontally
-                    X.Top = X.Top - (inputX * 70); //  moves inputY spaces down vertically
-                    BS.Margin = X; // Left Down Diagonal Move
+                x = gh.Margin;
+                x.Left = x.Left + inputX * 70;
 
-                }
-                if ((inputX <= -1) && (inputY >= 1)) 
-                {
-                    X.Left = X.Left - (inputX * 70); // moves inputX spaces to the left horizontally
-                    X.Top = X.Top + (inputX * 70); // moves inputY spaces up vertically
-                    BS.Margin = X; // Left Up Diagonal Move
-                }
-                if ((inputX >= 1) && (inputY <= -1)) 
-                {
-                    Y.Left = Y.Left + (inputY * 70); // moves inputX spaces to the left horizontally
-                    Y.Top = Y.Top - (inputY * 70); //  moves inputY spaces down vertically
-                    BS.Margin = Y; // Right Down Diagonal Move
-                }
-                if ((inputX >= 1) && (inputY <= 1)) 
-                {
-                    Y.Left = Y.Left + (inputY * 70); // moves inputX spaces to the left horizontally
-                    Y.Top = Y.Top + (inputY * 70); // moves inputY spaces up vertically
-                    BS.Margin = X; // Right Up Diagonal Move
-                }
-                else if ((inputX == 0) && (inputY == 0)) 
-                {
-                    X.Left = X.Left; // no horizontal movement
-                    X.Top = X.Top;  // no vertical movement
-                    BS.Margin = X; // same original movement
-                }
+                x.Top = x.Top + inputY * 70;
+                gh.Margin = x;
+
             }
+            if (inputY == 0)
+            {
+                x = gh.Margin;
+                x.Left = x.Left + inputX * 70; // moves position of a chess piece horizontally
+                gh.Margin = x;
+            }
+            else if (inputX == 0)
+            {
+                x = gh.Margin;
+                x.Top = x.Top + inputY * 70;
+
+                gh.Margin = x;
+
+
+            }
+
         }
 
 

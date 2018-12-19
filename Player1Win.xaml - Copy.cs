@@ -20,12 +20,20 @@ namespace ChessFinal
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Stats : Page
+    public sealed partial class Player1Win : Page
     {
-  
-        public Stats()
+        public Player1Win()
         {
             this.InitializeComponent();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Player1WinFrame.Navigate(typeof(MainPage));
+        }
+        private void Player1WinFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+
         }
     }
 }
