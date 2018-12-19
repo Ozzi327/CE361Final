@@ -39,5 +39,10 @@ namespace ChessFinal
         {
             ChessFrame.Navigate(typeof(Stats));
         }
+
+        private void ChessFrame_Navigated(object sender, NavigationEventArgs e)
+        {
+
+        }
     }
 }

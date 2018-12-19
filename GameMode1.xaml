@@ -9,74 +9,109 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
 
-    <Grid x:Name="ws35" RenderTransformOrigin="0.709,0.814">
-        <Rectangle x:Name="ws11" HorizontalAlignment="Left" Height="70" Margin="200,70,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="bs25" HorizontalAlignment="Left" Height="70" Margin="480,140,0,0" VerticalAlignment="Top" Width="70" Fill="Black"/>
-        <Rectangle x:Name="bs36" HorizontalAlignment="Left" Height="70" Margin="550,210,0,0" VerticalAlignment="Top" Width="70" Fill="Black"/>
-        <Rectangle x:Name="bs18" HorizontalAlignment="Left" Height="70" Margin="690,70,0,0" VerticalAlignment="Top" Width="70" Fill="Black"/>
-        <Rectangle x:Name="bs16" HorizontalAlignment="Left" Height="70" Margin="550,70,0,0" VerticalAlignment="Top" Width="70" Fill="Black"/>
-        <Rectangle x:Name="bs23" HorizontalAlignment="Left" Height="70" Margin="340,140,0,0" VerticalAlignment="Top" Width="70" Fill="Black"/>
-        <Rectangle x:Name="ws28" HorizontalAlignment="Left" Height="70" Margin="690,140,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="ws1" HorizontalAlignment="Left" Height="70" Margin="411,281,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="ws15" HorizontalAlignment="Left" Height="70" Margin="480,70,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="ws24" HorizontalAlignment="Left" Height="70" Margin="410,140,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="ws13" HorizontalAlignment="Left" Height="70" Margin="340,70,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="ws17" HorizontalAlignment="Left" Height="70" Margin="620,70,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="bs14" HorizontalAlignment="Left" Height="70" Margin="410,70,0,0" VerticalAlignment="Top" Width="70" Fill="Black" RenderTransformOrigin="0.44,0.393"/>
-        <Rectangle x:Name="bs34" HorizontalAlignment="Left" Height="70" Margin="410,210,0,0" VerticalAlignment="Top" Width="70" Fill="Black" RenderTransformOrigin="0.44,0.393"/>
-        <Rectangle x:Name="bs27" HorizontalAlignment="Left" Height="70" Margin="620,140,0,0" VerticalAlignment="Top" Width="70" Fill="Black" RenderTransformOrigin="0.44,0.393"/>
-        <Rectangle x:Name="bs38" HorizontalAlignment="Left" Height="70" Margin="690,210,0,0" VerticalAlignment="Top" Width="70" Fill="Black"/>
-        <Rectangle x:Name="ws37" HorizontalAlignment="Left" Height="70" Margin="620,210,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="ws33" HorizontalAlignment="Left" Height="70" Margin="340,210,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="ws44" HorizontalAlignment="Left" Height="70" Margin="410,280,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="ws55" HorizontalAlignment="Left" Height="70" Margin="480,350,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="ws48" HorizontalAlignment="Left" Height="70" Margin="690,280,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="bs54" HorizontalAlignment="Left" Height="70" Margin="480,280,0,0" VerticalAlignment="Top" Width="70" Fill="Black" RenderTransformOrigin="0.44,0.393"/>
-        <Rectangle x:Name="bs47" HorizontalAlignment="Left" Height="70" Margin="620,280,0,0" VerticalAlignment="Top" Width="70" Fill="Black" RenderTransformOrigin="0.44,0.393"/>
-        <Rectangle x:Name="bs43" HorizontalAlignment="Left" Height="70" Margin="340,280,0,0" VerticalAlignment="Top" Width="70" Fill="Black" RenderTransformOrigin="0.44,0.393"/>
-        <Rectangle x:Name="bs1" HorizontalAlignment="Left" Height="70" Margin="410,350,0,0" VerticalAlignment="Top" Width="70" Fill="Black" RenderTransformOrigin="0.44,0.393"/>
-        <Rectangle x:Name="bs56" HorizontalAlignment="Left" Height="70" Margin="550,350,0,0" VerticalAlignment="Top" Width="70" Fill="Black" RenderTransformOrigin="0.44,0.393"/>
-        <Rectangle x:Name="bs58" HorizontalAlignment="Left" Height="70" Margin="690,350,0,0" VerticalAlignment="Top" Width="70" Fill="Black" RenderTransformOrigin="0.44,0.393"/>
-        <Rectangle x:Name="ws57" HorizontalAlignment="Left" Height="70" Margin="620,350,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="ws53" HorizontalAlignment="Left" Height="70" Margin="340,350,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="ws64" HorizontalAlignment="Left" Height="70" Margin="410,420,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="ws66" HorizontalAlignment="Left" Height="70" Margin="550,420,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="ws68" HorizontalAlignment="Left" Height="70" Margin="690,420,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="bs65" HorizontalAlignment="Left" Height="70" Margin="480,420,0,0" VerticalAlignment="Top" Width="70" Fill="Black" RenderTransformOrigin="0.44,0.393"/>
-        <Rectangle x:Name="bs67" HorizontalAlignment="Left" Height="70" Margin="620,420,0,0" VerticalAlignment="Top" Width="70" Fill="Black" RenderTransformOrigin="0.44,0.393"/>
-        <Rectangle x:Name="bs63" HorizontalAlignment="Left" Height="70" Margin="340,420,0,0" VerticalAlignment="Top" Width="70" Fill="Black" RenderTransformOrigin="0.44,0.393"/>
-        <Rectangle x:Name="bs85" HorizontalAlignment="Left" Height="70" Margin="480,560,0,0" VerticalAlignment="Top" Width="70" Fill="Black" RenderTransformOrigin="0.44,0.393"/>
-        <Rectangle x:Name="bs76" HorizontalAlignment="Left" Height="70" Margin="550,490,0,0" VerticalAlignment="Top" Width="70" Fill="Black" RenderTransformOrigin="0.44,0.393"/>
-        <Rectangle x:Name="bs78" HorizontalAlignment="Left" Height="70" Margin="690,490,0,0" VerticalAlignment="Top" Width="70" Fill="Black" RenderTransformOrigin="0.44,0.393"/>
-        <Rectangle x:Name="ws75" HorizontalAlignment="Left" Height="70" Margin="480,490,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="ws77" HorizontalAlignment="Left" Height="70" Margin="620,490,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="ws73" HorizontalAlignment="Left" Height="70" Margin="340,490,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="ws84" HorizontalAlignment="Left" Height="70" Margin="410,560,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="ws86" HorizontalAlignment="Left" Height="70" Margin="550,560,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="ws88" HorizontalAlignment="Left" Height="70" Margin="690,560,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="bs74" HorizontalAlignment="Left" Height="70" Margin="410,490,0,0" VerticalAlignment="Top" Width="70" Fill="Black" RenderTransformOrigin="0.44,0.393"/>
-        <Rectangle x:Name="bs87" HorizontalAlignment="Left" Height="70" Margin="620,560,0,0" VerticalAlignment="Top" Width="70" Fill="Black" RenderTransformOrigin="0.44,0.393"/>
-        <Rectangle x:Name="bs83" HorizontalAlignment="Left" Height="70" Margin="340,560,0,0" VerticalAlignment="Top" Width="70" Fill="Black" RenderTransformOrigin="0.44,0.393"/>
+    <Grid x:Name="GM1" RenderTransformOrigin="0.709,0.814">
+        <Rectangle x:Name="ws11" HorizontalAlignment="Left" Height="70" Margin="200,70,0,0" VerticalAlignment="Top" Width="70" Fill="Red"/>
+        <Rectangle x:Name="bs25" HorizontalAlignment="Left" Height="70" Margin="480,140,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" Grid.RowSpan="2"/>
+        <Rectangle x:Name="bs36" HorizontalAlignment="Left" Height="70" Margin="550,210,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" Grid.RowSpan="2" Grid.Row="1"/>
+        <Rectangle x:Name="bs18" HorizontalAlignment="Left" Height="70" Margin="690,70,0,0" VerticalAlignment="Top" Width="70" Fill="Blue"/>
+        <Rectangle x:Name="bs16" HorizontalAlignment="Left" Height="70" Margin="550,70,0,0" VerticalAlignment="Top" Width="70" Fill="Blue"/>
+        <Rectangle x:Name="bs23" HorizontalAlignment="Left" Height="70" Margin="340,140,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" Grid.RowSpan="2"/>
+        <Rectangle x:Name="ws28" HorizontalAlignment="Left" Height="70" Margin="690,140,0,0" VerticalAlignment="Top" Width="70" Fill="red" Grid.RowSpan="2"/>
+        <Rectangle x:Name="ws15" HorizontalAlignment="Left" Height="70" Margin="480,70,0,0" VerticalAlignment="Top" Width="70" Fill="red"/>
+        <Rectangle x:Name="ws24" HorizontalAlignment="Left" Height="70" Margin="410,140,0,0" VerticalAlignment="Top" Width="70" Fill="red" Grid.RowSpan="2"/>
+        <Rectangle x:Name="ws13" HorizontalAlignment="Left" Height="70" Margin="340,70,0,0" VerticalAlignment="Top" Width="70" Fill="red"/>
+        <Rectangle x:Name="ws17" HorizontalAlignment="Left" Height="70" Margin="620,70,0,0" VerticalAlignment="Top" Width="70" Fill="red"/>
+        <Rectangle x:Name="bs14" HorizontalAlignment="Left" Height="70" Margin="410,70,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" RenderTransformOrigin="0.44,0.393"/>
+        <Rectangle x:Name="bs34" HorizontalAlignment="Left" Height="70" Margin="410,210,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" RenderTransformOrigin="0.44,0.393" Grid.RowSpan="2" Grid.Row="1"/>
+        <Rectangle x:Name="bs27" HorizontalAlignment="Left" Height="70" Margin="620,140,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" RenderTransformOrigin="0.44,0.393" Grid.RowSpan="2"/>
+        <Rectangle x:Name="bs38" HorizontalAlignment="Left" Height="70" Margin="690,210,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" Grid.RowSpan="2" Grid.Row="1"/>
+        <Rectangle x:Name="ws37" HorizontalAlignment="Left" Height="70" Margin="620,210,0,0" VerticalAlignment="Top" Width="70" Fill="red" Grid.RowSpan="2" Grid.Row="1"/>
+        <Rectangle x:Name="ws33" HorizontalAlignment="Left" Height="70" Margin="340,210,0,0" VerticalAlignment="Top" Width="70" Fill="red" Grid.RowSpan="2" Grid.Row="1"/>
+        <Rectangle x:Name="ws44" HorizontalAlignment="Left" Height="70" Margin="410,280,0,0" VerticalAlignment="Top" Width="70" Fill="red" Grid.Row="2"/>
+        <Rectangle x:Name="ws55" HorizontalAlignment="Left" Height="70" Margin="480,350,0,0" VerticalAlignment="Top" Width="70" Fill="red" Grid.Row="2"/>
+        <Rectangle x:Name="ws48" HorizontalAlignment="Left" Height="70" Margin="690,280,0,0" VerticalAlignment="Top" Width="70" Fill="red" Grid.Row="2"/>
+        <Rectangle x:Name="bs54" HorizontalAlignment="Left" Height="70" Margin="410,350,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" RenderTransformOrigin="0.44,0.393" Grid.Row="2"/>
+        <Rectangle x:Name="bs47" HorizontalAlignment="Left" Height="70" Margin="620,280,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" RenderTransformOrigin="0.44,0.393" Grid.Row="2"/>
+        <Rectangle x:Name="bs43" HorizontalAlignment="Left" Height="70" Margin="340,280,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" RenderTransformOrigin="0.44,0.393" Grid.Row="2"/>
+        <Rectangle x:Name="bs45" HorizontalAlignment="Left" Height="70" Margin="480,280,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" RenderTransformOrigin="0.44,0.393" Grid.Row="2"/>
+        <Rectangle x:Name="bs56" HorizontalAlignment="Left" Height="70" Margin="550,350,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" RenderTransformOrigin="0.44,0.393" Grid.Row="2"/>
+        <Rectangle x:Name="bs58" HorizontalAlignment="Left" Height="70" Margin="690,350,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" RenderTransformOrigin="0.44,0.393" Grid.Row="2"/>
+        <Rectangle x:Name="ws57" HorizontalAlignment="Left" Height="70" Margin="620,350,0,0" VerticalAlignment="Top" Width="70" Fill="red" Grid.Row="2"/>
+        <Rectangle x:Name="ws53" HorizontalAlignment="Left" Height="70" Margin="340,350,0,0" VerticalAlignment="Top" Width="70" Fill="red" Grid.Row="2"/>
+        <Rectangle x:Name="ws64" HorizontalAlignment="Left" Height="70" Margin="410,420,0,0" VerticalAlignment="Top" Width="70" Fill="red" Grid.Row="2"/>
+        <Rectangle x:Name="ws66" HorizontalAlignment="Left" Height="70" Margin="550,420,0,0" VerticalAlignment="Top" Width="70" Fill="red" Grid.Row="2"/>
+        <Rectangle x:Name="ws68" HorizontalAlignment="Left" Height="70" Margin="690,420,0,0" VerticalAlignment="Top" Width="70" Fill="red" Grid.Row="2"/>
+        <Rectangle x:Name="bs65" HorizontalAlignment="Left" Height="70" Margin="480,420,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" RenderTransformOrigin="0.44,0.393" Grid.Row="2"/>
+        <Rectangle x:Name="bs67" HorizontalAlignment="Left" Height="70" Margin="620,420,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" RenderTransformOrigin="0.44,0.393" Grid.Row="2"/>
+        <Rectangle x:Name="bs63" HorizontalAlignment="Left" Height="70" Margin="340,420,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" RenderTransformOrigin="0.44,0.393" Grid.Row="2"/>
+        <Rectangle x:Name="bs85" HorizontalAlignment="Left" Height="70" Margin="480,560,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" RenderTransformOrigin="0.44,0.393" Grid.Row="2"/>
+        <Rectangle x:Name="bs76" HorizontalAlignment="Left" Height="70" Margin="550,490,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" RenderTransformOrigin="0.44,0.393" Grid.Row="2"/>
+        <Rectangle x:Name="bs78" HorizontalAlignment="Left" Height="70" Margin="690,490,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" RenderTransformOrigin="0.44,0.393" Grid.Row="2"/>
+        <Rectangle x:Name="ws75" HorizontalAlignment="Left" Height="70" Margin="480,490,0,0" VerticalAlignment="Top" Width="70" Fill="red" Grid.Row="2"/>
+        <Rectangle x:Name="ws77" HorizontalAlignment="Left" Height="70" Margin="620,490,0,0" VerticalAlignment="Top" Width="70" Fill="red" Grid.Row="2"/>
+        <Rectangle x:Name="ws73" HorizontalAlignment="Left" Height="70" Margin="340,490,0,0" VerticalAlignment="Top" Width="70" Fill="red" Grid.Row="2"/>
+        <Rectangle x:Name="ws84" HorizontalAlignment="Left" Height="70" Margin="410,560,0,0" VerticalAlignment="Top" Width="70" Fill="red" Grid.Row="2"/>
+        <Rectangle x:Name="ws86" HorizontalAlignment="Left" Height="70" Margin="550,560,0,0" VerticalAlignment="Top" Width="70" Fill="red" Grid.Row="2"/>
+        <Rectangle x:Name="ws88" HorizontalAlignment="Left" Height="70" Margin="690,560,0,0" VerticalAlignment="Top" Width="70" Fill="red" Grid.Row="2"/>
+        <Rectangle x:Name="bs74" HorizontalAlignment="Left" Height="70" Margin="410,490,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" RenderTransformOrigin="0.44,0.393" Grid.Row="2"/>
+        <Rectangle x:Name="bs87" HorizontalAlignment="Left" Height="70" Margin="620,560,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" RenderTransformOrigin="0.44,0.393" Grid.Row="2"/>
+        <Rectangle x:Name="bs83" HorizontalAlignment="Left" Height="70" Margin="340,560,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" RenderTransformOrigin="0.44,0.393" Grid.Row="2"/>
 
-        <Rectangle x:Name="ws26" HorizontalAlignment="Left" Height="70" Margin="550,140,0,0" VerticalAlignment="Top" Width="70"/>
+        <Rectangle x:Name="ws26" HorizontalAlignment="Left" Height="70" Margin="550,140,0,0" VerticalAlignment="Top" Width="70" Fill="red" Grid.RowSpan="2"/>
 
-        <Rectangle x:Name="bs12" HorizontalAlignment="Left" Height="70" Margin="270,70,0,0" VerticalAlignment="Top" Width="70" Fill="Black" RenderTransformOrigin="0.44,0.393"/>
-        <Rectangle x:Name="bs21" HorizontalAlignment="Left" Height="70" Margin="200,140,0,0" VerticalAlignment="Top" Width="70" Fill="Black" RenderTransformOrigin="0.44,0.393"/>
-        <Rectangle x:Name="ws22" HorizontalAlignment="Left" Height="70" Margin="270,140,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="bs41" HorizontalAlignment="Left" Height="70" Margin="200,280,0,0" VerticalAlignment="Top" Width="70" Fill="Black" RenderTransformOrigin="0.44,0.393"/>
-        <Rectangle x:Name="bs61" HorizontalAlignment="Left" Height="70" Margin="200,420,0,0" VerticalAlignment="Top" Width="70" Fill="Black" RenderTransformOrigin="0.44,0.393"/>
-        <Rectangle x:Name="bs81" HorizontalAlignment="Left" Height="70" Margin="200,560,0,0" VerticalAlignment="Top" Width="70" Fill="Black" RenderTransformOrigin="0.44,0.393"/>
-        <Rectangle x:Name="ws42" HorizontalAlignment="Left" Height="70" Margin="270,280,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="ws62" HorizontalAlignment="Left" Height="70" Margin="270,420,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="ws82" HorizontalAlignment="Left" Height="70" Margin="270,560,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="ws31" HorizontalAlignment="Left" Height="70" Margin="200,210,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="ws51" HorizontalAlignment="Left" Height="70" Margin="200,350,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="ws71" HorizontalAlignment="Left" Height="70" Margin="200,490,0,0" VerticalAlignment="Top" Width="70"/>
-        <Rectangle x:Name="bs32" HorizontalAlignment="Left" Height="70" Margin="270,210,0,0" VerticalAlignment="Top" Width="70" Fill="Black" RenderTransformOrigin="0.44,0.393"/>
-        <Rectangle x:Name="bs52" HorizontalAlignment="Left" Height="70" Margin="270,350,0,0" VerticalAlignment="Top" Width="70" Fill="Black" RenderTransformOrigin="0.44,0.393"/>
-        <Rectangle x:Name="bs72" HorizontalAlignment="Left" Height="70" Margin="270,490,0,0" VerticalAlignment="Top" Width="70" Fill="Black" RenderTransformOrigin="0.44,0.393"/>
-        <Rectangle x:Name="ws46" HorizontalAlignment="Left" Height="70" Margin="550,280,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="-1.061,1"/>
-        <Rectangle x:Name="ws2" HorizontalAlignment="Left" Height="70" Margin="480,210,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="-1.061,1"/>
+        <Rectangle x:Name="bs12" HorizontalAlignment="Left" Height="70" Margin="270,70,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" RenderTransformOrigin="0.44,0.393"/>
+        <Rectangle x:Name="bs21" HorizontalAlignment="Left" Height="70" Margin="200,140,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" RenderTransformOrigin="0.44,0.393" Grid.RowSpan="2"/>
+        <Rectangle x:Name="ws22" HorizontalAlignment="Left" Height="70" Margin="270,140,0,0" VerticalAlignment="Top" Width="70" Fill="red" Grid.RowSpan="2"/>
+        <Rectangle x:Name="bs41" HorizontalAlignment="Left" Height="70" Margin="200,280,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" RenderTransformOrigin="0.44,0.393" Grid.Row="2"/>
+        <Rectangle x:Name="bs61" HorizontalAlignment="Left" Height="70" Margin="200,420,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" RenderTransformOrigin="0.44,0.393" Grid.Row="2"/>
+        <Rectangle x:Name="bs81" HorizontalAlignment="Left" Height="70" Margin="200,560,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" RenderTransformOrigin="0.44,0.393" Grid.Row="2"/>
+        <Rectangle x:Name="ws42" HorizontalAlignment="Left" Height="70" Margin="270,280,0,0" VerticalAlignment="Top" Width="70" Fill="red" Grid.Row="2"/>
+        <Rectangle x:Name="ws62" HorizontalAlignment="Left" Height="70" Margin="270,420,0,0" VerticalAlignment="Top" Width="70" Fill="red" Grid.Row="2"/>
+        <Rectangle x:Name="ws82" HorizontalAlignment="Left" Height="70" Margin="270,560,0,0" VerticalAlignment="Top" Width="70" Fill="red" Grid.Row="2"/>
+        <Rectangle x:Name="ws31" HorizontalAlignment="Left" Height="70" Margin="200,210,0,0" VerticalAlignment="Top" Width="70" Fill="red" Grid.RowSpan="2" Grid.Row="1"/>
+        <Rectangle x:Name="ws51" HorizontalAlignment="Left" Height="70" Margin="200,350,0,0" VerticalAlignment="Top" Width="70" Fill="red" Grid.Row="2"/>
+        <Rectangle x:Name="ws71" HorizontalAlignment="Left" Height="70" Margin="200,490,0,0" VerticalAlignment="Top" Width="70" Fill="red" Grid.Row="2"/>
+        <Rectangle x:Name="bs32" HorizontalAlignment="Left" Height="70" Margin="270,210,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" RenderTransformOrigin="0.44,0.393" Grid.RowSpan="2" Grid.Row="1"/>
+        <Rectangle x:Name="bs52" HorizontalAlignment="Left" Height="70" Margin="270,350,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" RenderTransformOrigin="0.44,0.393" Grid.Row="2"/>
+        <Rectangle x:Name="bs72" HorizontalAlignment="Left" Height="70" Margin="270,490,0,0" VerticalAlignment="Top" Width="70" Fill="Blue" RenderTransformOrigin="0.44,0.393" Grid.Row="2"/>
+        <Rectangle x:Name="ws46" HorizontalAlignment="Left" Height="70" Margin="550,280,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="-1.061,1" Fill="red" Grid.Row="2"/>
+        <TextBlock x:Name="Player1CountDown" HorizontalAlignment="Left" Height="30" Margin="40,201,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="115" RenderTransformOrigin="0.493,0.556"/>
+        <TextBlock x:Name="Player2CountDown" HorizontalAlignment="Left" Height="30" Margin="40,404,0,0" Text="" TextWrapping="Wrap" VerticalAlignment="Top" Width="115"/>
+        <Rectangle x:Name="ws35" HorizontalAlignment="Left" Height="70" Margin="480,210,0,0" VerticalAlignment="Top" Width="70" RenderTransformOrigin="-1.061,1" Fill="red" Grid.RowSpan="2" Grid.Row="1"/>
+        <Image x:Name="BlackRook1" HorizontalAlignment="Left" Height="70" Margin="200,70,0,0" VerticalAlignment="Top" Width="70" Source="BlackRook.png"/>
+        <Image x:Name="BlackRook2" HorizontalAlignment="Left" Height="70" Margin="200,560,0,0" VerticalAlignment="Top" Width="70" Source="BlackRook.png" Grid.Row="2"/>
+        <Image x:Name="BlackKnight1" HorizontalAlignment="Left" Height="70" Margin="200,140,0,0" VerticalAlignment="Top" Width="70" Source="BlackKnight.png" Grid.RowSpan="2"/>
+        <Image x:Name="BlackBishop1" HorizontalAlignment="Left" Height="70" Margin="200,210,0,0" VerticalAlignment="Top" Width="70" Source="BlackBishop.png" Grid.RowSpan="2" Grid.Row="1"/>
+        <Image x:Name="BlackKing" HorizontalAlignment="Left" Height="70" Margin="200,350,0,0" VerticalAlignment="Top" Width="70" Source="BlackKing.png" Grid.Row="2"/>
+        <Image x:Name="BlackQueen" HorizontalAlignment="Left" Height="70" Margin="200,280,0,0" VerticalAlignment="Top" Width="70" Source="BlackQueen.png" Grid.Row="2"/>
+        <Image x:Name="BlackBishop2" HorizontalAlignment="Left" Height="70" Margin="200,420,0,0" VerticalAlignment="Top" Width="70" Source="BlackBishop.png" Grid.Row="2"/>
+        <Image x:Name="BlackKnight2" HorizontalAlignment="Left" Height="70" Margin="200,490,0,0" VerticalAlignment="Top" Width="70" Source="BlackKnight.png" Grid.Row="2"/>
+        <Image x:Name="BlackPawn1" HorizontalAlignment="Left" Height="70" Margin="270,70,0,0" VerticalAlignment="Top" Width="70" Source="Pawn.png"/>
+        <Image x:Name="BlackPawn2" HorizontalAlignment="Left" Height="70" Margin="270,140,0,0" VerticalAlignment="Top" Width="70" Source="Pawn.png" Grid.RowSpan="2"/>
+        <Image x:Name="BlackPawn3" HorizontalAlignment="Left" Height="70" Margin="270,210,0,0" VerticalAlignment="Top" Width="70" Source="Pawn.png" Grid.RowSpan="2" Grid.Row="1"/>
+        <Image x:Name="BlackPawn4" HorizontalAlignment="Left" Height="70" Margin="270,280,0,0" VerticalAlignment="Top" Width="70" Source="Pawn.png" Grid.Row="2"/>
+        <Image x:Name="BlackPawn5" HorizontalAlignment="Left" Height="70" Margin="270,350,0,0" VerticalAlignment="Top" Width="70" Source="Pawn.png" Grid.Row="2"/>
+        <Image x:Name="BlackPawn6" HorizontalAlignment="Left" Height="70" Margin="270,420,0,0" VerticalAlignment="Top" Width="70" Source="Pawn.png" Grid.Row="2"/>
+        <Image x:Name="BlackPawn7" HorizontalAlignment="Left" Height="70" Margin="270,490,0,0" VerticalAlignment="Top" Width="70" Source="Pawn.png" Grid.Row="2"/>
+        <Image x:Name="BlackPawn8" HorizontalAlignment="Left" Height="70" Margin="270,560,0,0" VerticalAlignment="Top" Width="70" Source="Pawn.png" Grid.Row="2"/>
+        <Image x:Name="GreyRook1" HorizontalAlignment="Left" Height="70" Margin="690,70,0,0" VerticalAlignment="Top" Width="70" Source="GreyRook.png"/>
+        <Image x:Name="GreyRook2" HorizontalAlignment="Left" Height="70" Margin="690,560,0,0" VerticalAlignment="Top" Width="70" Source="GreyRook.png" Grid.Row="2"/>
+        <Image x:Name="GreyKnight1" HorizontalAlignment="Left" Height="70" Margin="690,140,0,0" VerticalAlignment="Top" Width="70" Source="GreyKnight.png" Grid.RowSpan="2"/>
+        <Image x:Name="GreyBishop1" HorizontalAlignment="Left" Height="70" Margin="690,210,0,0" VerticalAlignment="Top" Width="70" Source="GreyBishop.png" Grid.RowSpan="2" Grid.Row="1"/>
+        <Image x:Name="GreyKing" HorizontalAlignment="Left" Height="70" Margin="690,350,0,0" VerticalAlignment="Top" Width="70" Source="GreyKing.png" Grid.Row="2"/>
+        <Image x:Name="GreyQueen" HorizontalAlignment="Left" Height="70" Margin="690,280,0,0" VerticalAlignment="Top" Width="70" Source="GreyQueen.png" Grid.Row="2"/>
+        <Image x:Name="GreyBishop2" HorizontalAlignment="Left" Height="70" Margin="690,420,0,0" VerticalAlignment="Top" Width="70" Source="GreyBishop.png" Grid.Row="2"/>
+        <Image x:Name="GreyKnight2" HorizontalAlignment="Left" Height="70" Margin="690,490,0,0" VerticalAlignment="Top" Width="70" Source="GreyKnight.png" Grid.Row="2"/>
+        <Image x:Name="GreyPawn1" HorizontalAlignment="Left" Height="70" Margin="620,70,0,0" VerticalAlignment="Top" Width="70" Source="GreyPawn.png"/>
+        <Image x:Name="GreyPawn2" HorizontalAlignment="Left" Height="70" Margin="620,140,0,0" VerticalAlignment="Top" Width="70" Source="GreyPawn.png" Grid.RowSpan="2"/>
+        <Image x:Name="GreyPawn3" HorizontalAlignment="Left" Height="70" Margin="620,210,0,0" VerticalAlignment="Top" Width="70" Source="GreyPawn.png" Grid.RowSpan="2" Grid.Row="1"/>
+        <Image x:Name="GreyPawn4" HorizontalAlignment="Left" Height="70" Margin="620,280,0,0" VerticalAlignment="Top" Width="70" Source="GreyPawn.png" Grid.Row="2"/>
+        <Image x:Name="GreyPawn5" HorizontalAlignment="Left" Height="70" Margin="620,350,0,0" VerticalAlignment="Top" Width="70" Source="GreyPawn.png" Grid.Row="2"/>
+        <Image x:Name="GreyPawn6" HorizontalAlignment="Left" Height="70" Margin="620,420,0,0" VerticalAlignment="Top" Width="70" Source="GreyPawn.png" Grid.Row="2"/>
+        <Image x:Name="GreyPawn7" HorizontalAlignment="Left" Height="70" Margin="620,490,0,0" VerticalAlignment="Top" Width="70" Source="GreyPawn.png" Grid.Row="2"/>
+        <Image x:Name="GreyPawn8" HorizontalAlignment="Left" Height="70" Margin="620,560,0,0" VerticalAlignment="Top" Width="70" Source="GreyPawn.png" Grid.Row="2"/>
+
+
 
     </Grid>
 </Page>

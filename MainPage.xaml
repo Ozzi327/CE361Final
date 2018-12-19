@@ -1,0 +1,20 @@
+﻿<Page
+    x:Class="ChessFinal.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ChessFinal"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Button Content="Game Mode 1" HorizontalAlignment="Left" Margin="109,92,0,0" VerticalAlignment="Top" Height="42" Width="127" Click="GameMode1"/>
+        <Button Content="Game Mode 2" HorizontalAlignment="Left" Margin="109,180,0,0" VerticalAlignment="Top" Height="42" Width="127" Click="GameMode2"/>
+        <Button Content="Stats" HorizontalAlignment="Left" Margin="390,138,0,0" VerticalAlignment="Top" Height="42" Width="127" Click="Stats"/>
+        <TextBox HorizontalAlignment="Left" Margin="277,38,0,0" Text="Chess" VerticalAlignment="Top"/>
+        <Frame Name="ChessFrame" Navigated="ChessFrame_Navigated">
+
+        </Frame>
+    </Grid>
+</Page>
