@@ -8,17 +8,17 @@ namespace FinalProject
 {
     public class Queen : GamePiece, IComparable<Queen>
     {
-        public Queen(string ColorofPiece = null, int QueenPositionX = 0, int QueenPositionY = 0)
+        public Queen(string PieceType, Thickness QueenPositionX = 0, Thickness QueenPositionY = 0. bool ColorofPiece = false) : base(PieceType, QueenPositionX, QueenPositionY, false)
         {
+            PieceType = "Queen";
             PieceColor = ColorofPiece; // determines color of chess piece i.e. Black or White
             PositionX = QueenPositionX; // horizontal position of piece on board
             PositionY = QueenPositionY; // vertical position of piece on board
 
         }
 
-        private string PieceColor { get; set; } // private becuase user is not allowed to change the piece color
-        private int PositionX { get; } // recieves horizontal position on board
-        private int PositionY { get; } // recieves vertical position on board
+        private Thickness tempPositionX;
+        private Thickness tempPositionY;
 
         public override string ToString()
         {
@@ -45,13 +45,13 @@ namespace FinalProject
         {
             if (PieceColor.CompareTo(otherPiece.PieceColor) == 0)
             {
-                if (PositionX.CompareTo(otherPiece.PositionX) == 0)
+                if (PositionX.Left.CompareTo(otherPiece.PositionX.Left) == 0)
                 {
-                    return PositionY.CompareTo(otherPiece.PositionY); // gets difference of Y position of 2 pieces
+                    return PositionY.Top.CompareTo(otherPiece.PositionY.Top); // gets difference of Y position of 2 pieces
                 }
                 else
                 {
-                    return PositionX.CompareTo(otherPiece.PositionX); // gets difference of X postion of 2 pieces
+                    return PositionX.Left.CompareTo(otherPiece.PositionX.Left); // gets difference of X postion of 2 pieces
                 }
             }
             else
@@ -60,13 +60,13 @@ namespace FinalProject
             }
         }
 
-        public bool validMove(Queen a, Queen b)
+        public bool validMove(GamePiece b)
         {
-            if (((a.PositionX >= 1) && (a.PositionX <= 8)) && ((a.PositionY >= 1) && (a.PositionY <= 8))) // checks if new move is within boundaries of board
+            if (((this.PositionX.Left >= 200) && (this.PositionX.Left <= 690)) && ((this.PositionY.Top >= 70) && (this.PositionY.Top <= 560))) // checks if new move is within boundaries of board
             {
-                if ((a.PositionX == b.PositionY) && (a.PositionX == b.PositionY)) // checks if two pieces are on the same space on the board
+                if ((this.PositionX.Left == b.PositionY.Top) && (this.PositionX.Left == b.PositionY.Top)) // checks if two pieces are on the same space on the board
                 {
-                    if (a.PieceColor != b.PieceColor) // checks if 2 pieces are of different color
+                    if (this.PieceColor != b.PieceColor) // checks if 2 pieces are of different color
                     {
                         return true; // valid move
                     }
@@ -88,7 +88,7 @@ namespace FinalProject
 
         public void removePiece(Queen a, Queen b)
         {
-            if ((b.PositionX == a.PositionX) && (b.PositionY == a.PositionX)) // checks if piece B has moved into piece A space on the board
+            if ((b.PositionX.Left == a.PositionX.Left) && (b.PositionY.Top == a.PositionY.Top)) // checks if piece B has moved into piece A space on the board
             {
                 if (b.PieceColor != a.PieceColor) // checks if piece A and piece B are the same color
                 {
@@ -97,64 +97,54 @@ namespace FinalProject
             }
 
         }
-
-        public  void UpMove(Queen piece, int inputY)
+        public void Move(double inputX, double inputY, Thickness X, Thickness Y, Image BS)
         {
-            int PositionY = piece.PositionY;
-            PositionY = PositionY + inputY; // moves position of chess piece up vertically based off of user input
-        
-        }
-        public  void DownMove(Queen piece, int inputY)
-        {
-            int PositionY = piece.PositionY;
-            PositionY = PositionY - inputY; // moves position of a chess piece downwards vertically 
-        }
+            if ((inputX == 0) && (inputY == 1))
+            {
+                Y.Top = Y.Top + 70; // moves one space to up vertically 
+                BS.Margin = Y;
+            }
+            if ((inputX == 0) && (inputY == -1))
+            {
+                Y.Top = Y.Top - 70; // moves one space down vertically
+                BS.Margin = Y;
+            }
+            if ((inputX == 1) && (inputY == 0))
+            {
+                X.Left = X.Left + 70; // moves one space to the right horizontally
+                BS.Margin = X;
+            }
+            if ((inputX == -1) && (inputY == -1))
+            {
+                X.Left = X.Left - 70; // moves one space to the left horizontally
+                X.Top = X.Top - 70; // moves one space down vertically
+                BS.Margin = X; // Left Down Diagonal Move
 
-        public  void RightMove(Queen piece, int inputX)
-        {
-            int PositionX = piece.PositionX;
-            PositionX = PositionX + inputX; // moves position of a chess piece rightwards horizontally
-        }
-        public  void LeftMove(Queen piece, int inputX)
-        {
-            int PositionX = piece.PositionX;
-            PositionX = PositionX - inputX; // moves position of a chess piece leftwards horizontally
-        }
-
-        public void UpLeftDiagonalMove(Queen piece, int input)
-        {
-            int PositionX = piece.PositionY;
-            int PositionY = piece.PositionX;
-
-            PositionX = piece.PositionX - input;
-            PositionY = piece.PositionY + input;
-        }
-
-        public void DownRightDiagonalMove(Queen piece, int input)
-        {
-            int PositionX = piece.PositionY;
-            int PositionY = piece.PositionX;
-
-            PositionX = piece.PositionX + input;
-            PositionY = piece.PositionY - input;
-        }
-
-        public void UpRightDiagonalMove(Queen piece, int input)
-        {
-            int PositionX = piece.PositionY;
-            int PositionY = piece.PositionX;
-
-            PositionX = piece.PositionX + input;
-            PositionY = piece.PositionY + input;
-        }
-
-        public void DownLeftDiagonalMove(Queen piece, int input)
-        {
-            int PositionX = piece.PositionY;
-            int PositionY = piece.PositionX;
-
-            PositionX = piece.PositionX - input;
-            PositionY = piece.PositionY - input;
+            }
+            if ((inputX == -1) && (inputY == 1))
+            {
+                X.Left = X.Left - 70; // moves one space to the left horizontally
+                X.Top = X.Top + 70; // moves one space up vertically
+                BS.Margin = X; // Left Up Diagonal Move
+            }
+            if ((inputX == 1) && (inputY == -1))
+            {
+                Y.Left = Y.Left + 70; // moves one space to the left horizontally
+                Y.Top = Y.Top - 70; // moves one space down vertically
+                BS.Margin = Y; // Right Down Diagonal Move
+            }
+            if ((inputX == 1) && (inputY == 1))
+            {
+                Y.Left = Y.Left + 70; // moves one space to the left horizontally
+                Y.Top = Y.Top + 70; // moves one space up vertically
+                BS.Margin = X; // Right Up Diagonal Move
+            }
+            else if ((inputX == 0) && (inputY == 0))
+            {
+                X.Left = X.Left; // no horizontal movement
+                X.Top = X.Top;  // no vertical movement
+                BS.Margin = X; // same original movement
+            }
         }
 
 

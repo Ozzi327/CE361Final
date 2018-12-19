@@ -18,8 +18,8 @@ namespace FinalProject
 
         }
 
-        private Thickness PositionX; // recieves horizontal position on board
-        private Thickness PositionY; // recieves vertical position on board
+        private Thickness tempPositionX; // recieves horizontal position on board
+        private Thickness tempPositionY; // recieves vertical position on board
 
         public override string ToString()
         {
