@@ -17,7 +17,7 @@ public class Bishop : GamePiece, IComparable<Bishop>
 
     public override string Tostring()
     {
-        return $"The Team {Piececolor} Bishop has moved ({PositionX}, {PositionY}) spaces";
+        return $"The Team {Piececolor} Bishop has moved ({BishopPositionX}, {BishopPositionY}) spaces";
     }
 
     public override bool Equals(object obj) // checks if object is a King type
@@ -64,10 +64,10 @@ public class Bishop : GamePiece, IComparable<Bishop>
         {
             x = BS.Margin;
             x.Left = x.Left + inputX * 70;
-            y = BS.Margin;
-            y.Top = y.Top + inputY * 70;
+            
+            x.Top = x.Top + inputx * 70;
             BS.Margin = x;
-            BS.Margin = y;
+           
         }
         else
             Console.WriteLine("make x and y be the same number positive or negative dont matter");
@@ -75,7 +75,7 @@ public class Bishop : GamePiece, IComparable<Bishop>
 
     }
 
-    public bool validMove(Gamepiece b)
+    public bool validMove(GamePiece b)
     {
         if (((this.PositionX.Left >= 200) && (this.PositionX.Left <= 690)) && ((this.PositionY.Top >= 70) && (this.PositionY.Top <= 560))) // checks if new move is within boundaries of board
         {
@@ -101,11 +101,6 @@ public class Bishop : GamePiece, IComparable<Bishop>
         }
     }
 
-    public static void Moveset()
-    {
-        this.PostionX = this.tempPositionX;
-        this.PositionY = this.tempPositionY;
-    }
 
     public void removePiece(Bishop a, Bishop b)
     {
