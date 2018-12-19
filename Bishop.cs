@@ -1,5 +1,19 @@
 ﻿using System;
-
+using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Foundation;
+using Windows.Foundation.Collections;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Navigation;
+using ChessFinal;
+using Windows.UI.Xaml.Media.Imaging;
 public class Bishop : GamePiece, IComparable<Bishop>
 {
     public Bishop(string PieceType, Thickness BishopPositionX, Thickness BishopPositionY, bool ColorofPiece = false) : base(PieceType, BishopPositionX, BishopPositionY, false)
@@ -15,9 +29,9 @@ public class Bishop : GamePiece, IComparable<Bishop>
     private Thickness tempPositionY;
 
 
-    public override string Tostring()
+    public override string ToString()
     {
-        return $"The Team {Piececolor} Bishop has moved ({BishopPositionX}, {BishopPositionY}) spaces";
+        return $"The Team {PieceColor} Bishop has moved ({PositionX}, {PositionY}) spaces";
     }
 
     public override bool Equals(object obj) // checks if object is a King type
@@ -64,14 +78,13 @@ public class Bishop : GamePiece, IComparable<Bishop>
         {
             x = BS.Margin;
             x.Left = x.Left + inputX * 70;
-            
-            x.Top = x.Top + inputx * 70;
+
+            x.Top = x.Top + inputX * 70;
             BS.Margin = x;
-           
+
         }
         else
-            Console.WriteLine("make x and y be the same number positive or negative dont matter");
-
+            BS.Margin = BS.Margin;
 
     }
 
@@ -108,7 +121,7 @@ public class Bishop : GamePiece, IComparable<Bishop>
         {
             if (b.PieceColor != a.PieceColor) // checks if piece A and piece B are the same color
             {
-                a.PieceColor = null; // Piece A color is deleted
+                a.PieceColor = false; // Piece A color is deleted
             }
         }
 
@@ -117,4 +130,5 @@ public class Bishop : GamePiece, IComparable<Bishop>
 }
 
 
-    
+
+
