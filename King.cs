@@ -1,15 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Foundation;
+using Windows.Foundation.Collections;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Navigation;
+using ChessFinal;
+using Windows.UI.Xaml.Media.Imaging;
 
-namespace FinalProject
+namespace ChessFinal
 
 {
     public class King : GamePiece, IComparable<King>
     {
-        public King(string PieceType, bool ColorofPiece = false, Thickness KingPositionX = 0, Thickness KingPositionY = 0) : base(PieceType, false, KingPositionX, KingPositionY)
+        public King(string PieceType, Thickness KingPositionX, Thickness KingPositionY, bool ColorofPiece = false) : base(PieceType, KingPositionX, KingPositionY, false)
         {
             PieceColor = ColorofPiece; // determines color of chess piece i.e. Black or White
             PositionX = KingPositionX; // horizontal position of piece on board
@@ -95,7 +106,7 @@ namespace FinalProject
             {
                 if (b.PieceColor != a.PieceColor) // checks if piece A and piece B are the same color
                 {
-                    a.PieceColor = null; // Piece A color is deleted
+                    a.PieceColor = false; // Piece A color is deleted
                 }
             }
 
@@ -116,6 +127,11 @@ namespace FinalProject
             if ((inputX == 1) && (inputY == 0))
             {
                 X.Left = X.Left + 70; // moves one space to the right horizontally
+                BS.Margin = X;
+            }
+            if ((inputX == -1) && (inputY == 0))
+            {
+                X.Left = X.Left - 70; // moves one space to the left horizontally
                 BS.Margin = X;
             }
             if ((inputX == -1) && (inputY == -1))
@@ -153,7 +169,7 @@ namespace FinalProject
     }
 }
 
-   
+
 
 
 

@@ -1,14 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace FinalProject
+using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.Foundation;
+using Windows.Foundation.Collections;
+using Windows.UI.Xaml;
+using Windows.UI.Xaml.Controls;
+using Windows.UI.Xaml.Controls.Primitives;
+using Windows.UI.Xaml.Data;
+using Windows.UI.Xaml.Input;
+using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Navigation;
+using ChessFinal;
+using Windows.UI.Xaml.Media.Imaging;
+namespace ChessFinal
 {
     public class Queen : GamePiece, IComparable<Queen>
     {
-        public Queen(string PieceType, Thickness QueenPositionX = 0, Thickness QueenPositionY = 0. bool ColorofPiece = false) : base(PieceType, QueenPositionX, QueenPositionY, false)
+        public Queen(string PieceType, Thickness QueenPositionX, Thickness QueenPositionY, bool ColorofPiece = false) : base(PieceType, QueenPositionX, QueenPositionY, false)
         {
             PieceType = "Queen";
             PieceColor = ColorofPiece; // determines color of chess piece i.e. Black or White
@@ -92,61 +102,69 @@ namespace FinalProject
             {
                 if (b.PieceColor != a.PieceColor) // checks if piece A and piece B are the same color
                 {
-                    a.PieceColor = null; // Piece A color is deleted
+                    a.PieceColor = false; // Piece A color is deleted
                 }
             }
 
         }
         public void Move(double inputX, double inputY, Thickness X, Thickness Y, Image BS)
         {
-            if ((inputX == 0) && (inputY == 1))
+            if (inputX == inputY)
             {
-                Y.Top = Y.Top + 70; // moves one space to up vertically 
-                BS.Margin = Y;
-            }
-            if ((inputX == 0) && (inputY == -1))
-            {
-                Y.Top = Y.Top - 70; // moves one space down vertically
-                BS.Margin = Y;
-            }
-            if ((inputX == 1) && (inputY == 0))
-            {
-                X.Left = X.Left + 70; // moves one space to the right horizontally
-                BS.Margin = X;
-            }
-            if ((inputX == -1) && (inputY == -1))
-            {
-                X.Left = X.Left - 70; // moves one space to the left horizontally
-                X.Top = X.Top - 70; // moves one space down vertically
-                BS.Margin = X; // Left Down Diagonal Move
+                if ((inputX == 0) && (inputY >= 1)) 
+                {
+                    Y.Top = Y.Top + (inputY * 70); // moves inputY spaces up vertically 
+                    BS.Margin = Y;
+                }
+                if ((inputX == 0) && (inputY <= -1)) 
+                {
+                    Y.Top = Y.Top - (inputY * 70); // moves inputY spaces down vertically
+                    BS.Margin = Y;
+                }
+                if ((inputX >= 1) && (inputY == 0))  
+                {
+                    X.Left = X.Left + (inputX * 70); // moves inputX spaces to the right horizontally
+                    BS.Margin = X;
+                }
+                if ((inputX <= -1) && (inputY == 0)) 
+                {
+                    X.Left = X.Left + (inputX * 70); // moves inputX spaces to the left horizontally
+                    BS.Margin = X;
+                }
+                if ((inputX <= -1) && (inputY <= -1)) 
+                {
+                    X.Left = X.Left - (inputX * 70); // moves inputX spaces to the left horizontally
+                    X.Top = X.Top - (inputX * 70); //  moves inputY spaces down vertically
+                    BS.Margin = X; // Left Down Diagonal Move
 
-            }
-            if ((inputX == -1) && (inputY == 1))
-            {
-                X.Left = X.Left - 70; // moves one space to the left horizontally
-                X.Top = X.Top + 70; // moves one space up vertically
-                BS.Margin = X; // Left Up Diagonal Move
-            }
-            if ((inputX == 1) && (inputY == -1))
-            {
-                Y.Left = Y.Left + 70; // moves one space to the left horizontally
-                Y.Top = Y.Top - 70; // moves one space down vertically
-                BS.Margin = Y; // Right Down Diagonal Move
-            }
-            if ((inputX == 1) && (inputY == 1))
-            {
-                Y.Left = Y.Left + 70; // moves one space to the left horizontally
-                Y.Top = Y.Top + 70; // moves one space up vertically
-                BS.Margin = X; // Right Up Diagonal Move
-            }
-            else if ((inputX == 0) && (inputY == 0))
-            {
-                X.Left = X.Left; // no horizontal movement
-                X.Top = X.Top;  // no vertical movement
-                BS.Margin = X; // same original movement
+                }
+                if ((inputX <= -1) && (inputY >= 1)) 
+                {
+                    X.Left = X.Left - (inputX * 70); // moves inputX spaces to the left horizontally
+                    X.Top = X.Top + (inputX * 70); // moves inputY spaces up vertically
+                    BS.Margin = X; // Left Up Diagonal Move
+                }
+                if ((inputX >= 1) && (inputY <= -1)) 
+                {
+                    Y.Left = Y.Left + (inputY * 70); // moves inputX spaces to the left horizontally
+                    Y.Top = Y.Top - (inputY * 70); //  moves inputY spaces down vertically
+                    BS.Margin = Y; // Right Down Diagonal Move
+                }
+                if ((inputX >= 1) && (inputY <= 1)) 
+                {
+                    Y.Left = Y.Left + (inputY * 70); // moves inputX spaces to the left horizontally
+                    Y.Top = Y.Top + (inputY * 70); // moves inputY spaces up vertically
+                    BS.Margin = X; // Right Up Diagonal Move
+                }
+                else if ((inputX == 0) && (inputY == 0)) 
+                {
+                    X.Left = X.Left; // no horizontal movement
+                    X.Top = X.Top;  // no vertical movement
+                    BS.Margin = X; // same original movement
+                }
             }
         }
 
 
     }
-} 
+}
